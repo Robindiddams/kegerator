@@ -3,4 +3,4 @@
 echo "💜 Deploying frontend"
 
 cd frontend
-yarn build
+npm run-script build

@@ -9,7 +9,6 @@ export const AppWrapper = styled.div`
 	width: 100%;
 	min-height: 100vh;
 	text-align: center;
-	background-color: #0C1E42;
 	// background-image: linear-gradient(to bottom, #0C1E42, white);
 	display: flex;
 	justify-content: center;
@@ -19,7 +18,7 @@ export const Content = styled.div`
 	font-family: roboto, sans-serif;
 	color: aliceblue;
 	align-self: center;
-	max-width: 50%;
+	// max-width: 50%;
 `;
 
 
@@ -61,7 +60,7 @@ export class FrostyBeer extends React.Component {
 				<Emoji>🍺</Emoji>
 			</ShakeSlow>
 			<ShakeSlow fixed='true'>
-				<Title>ROBINS KEGERATOR IS {this.props.temp}°C</Title>
+				<Title>ROBIN'S KEGERATOR IS {this.props.temp}°C</Title>
 			</ShakeSlow>
 		</IceCool>
 	  );

@@ -10,7 +10,7 @@
     "serverless-offline": "^3.31.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "sls offline"
   },
   "author": "",
   "license": "ISC"

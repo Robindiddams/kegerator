@@ -2,7 +2,7 @@
 
 I wanted to know what temperature my beer is. So I made this.
 
-[Check out the site](https://robins-kegerator.netlify.com)
+Check it out at <https://robinskegerator.tech>
 
 make sure you've got node and serverless
 ```bash

@@ -7,7 +7,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #0C1E42;
+}
+
+/* dumbass ios fixes */
+html, body {
   overflow: hidden;
+  position: relative;
+  height:100%;
 }
 
 code {

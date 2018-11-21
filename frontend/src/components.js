@@ -8,7 +8,7 @@ import {
 
 export const AppWrapper = styled.div`
 	width: 100%;
-	min-height: 100vh;
+	height: 100vh;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -37,10 +37,10 @@ const IceCool = styled.div`
 const move = keyframes`
 	position: relative;
 	0% {
-		top: -10%;
+		top: -5vh;
 	}
 	100% {
-		top: 130%;
+		top: 120vh;
 	}
 `;
 

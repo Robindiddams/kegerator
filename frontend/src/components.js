@@ -82,6 +82,21 @@ export class FrostyBeer extends React.Component {
 	}
 }
 
+export class NoBeer extends React.Component {
+	render() {
+	  return (
+		<IceCool>
+			<ShakeSlow fixed='true'>
+				<Emoji>🚫</Emoji>
+			</ShakeSlow>
+			<ShakeSlow fixed='true'>
+				<Title>ROBIN'S KEGERATOR IS OFFLINE</Title>
+			</ShakeSlow>
+		</IceCool>
+	  );
+	}
+}
+
 export class Content extends React.Component {
 	constructor(props) {
 		super(props)
@@ -89,7 +104,8 @@ export class Content extends React.Component {
 	}
 
 	state = {
-		temp: 0,
+		temp: null,
+		disabled: false,
 	}
 
 	componentDidMount() {
@@ -104,18 +120,21 @@ export class Content extends React.Component {
 				mode: 'cors',
 			},
 		).then(response => response.json()).then((data) => {
-			this.setState({temp: data.temp.toFixed(1)});
+			this.setState({temp: data.temp.toFixed(1), disabled: false});
 			this.props.onUpdate(data.temp.toFixed(1));
+		}).catch((err) => {
+			this.setState({disabled: true});
+			console.log("error", err);
 		});
 	}
 
 	render() {
 	  return (
 		<ContentWrapper onClick={() => {
-			this.setState({temp: 0});
+			this.setState({temp: null});
 			this.setTemp();
 		}}>
-			{ this.state.temp === 0 ? <ShakeyBeer/> : <FrostyBeer temp={this.state.temp}/> }
+			{ this.state.disabled ? <NoBeer/> : ( this.state.temp === null ? <ShakeyBeer/> : <FrostyBeer temp={this.state.temp}/> ) }
 		</ContentWrapper>
 	  );
 	}

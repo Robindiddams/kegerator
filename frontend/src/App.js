@@ -16,10 +16,12 @@ class App extends Component {
 		return (
 			<AppWrapper>
 				{this.state.tempFound ? <FallingSnowflakes/> : ''}
-				<Content onUpdate={() => {
-					if (!this.state.tempFound) {
-						this.setState({tempFound:true});
-					}
+				<Content 
+					disabled={true}
+					onUpdate={() => {
+						if (!this.state.tempFound) {
+							this.setState({tempFound:true});
+						}
 				}}/>
 			</AppWrapper>
 		);
